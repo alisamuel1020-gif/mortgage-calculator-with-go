@@ -8,6 +8,7 @@ A small full-stack mortgage calculator. A Go backend does the calculation and se
 - Breakdown into principal and interest, property tax and insurance
 - Loan amount, down payment, total interest and total repayment
 - Live updates as you type
+- Light and dark mode, following your device's theme setting 
 - Input validation with clear error messages
 - Standard library only, with no third-party Go dependencies
 
