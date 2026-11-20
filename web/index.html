@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mortgage calculator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1>Mortgage calculator</h1>
+
+<div class="card">
+<label for="homePrice">Home price ($)</label>
+<input id="homePrice" type="number" inputmode="decimal" value="400000">
+<div class="row">
+<div><label for="downPercent">Down payment (%)</label><input id="downPercent" type="number" inputmode="decimal" value="20"></div>
+<div><label for="termYears">Term (years)</label><input id="termYears" type="number" inputmode="numeric" value="30"></div>
+</div>
+<div class="row">
+<div><label for="annualRate">Interest rate (%)</label><input id="annualRate" type="number" inputmode="decimal" step="0.01" value="6.5"></div>
+<div><label for="taxPercent">Property tax (%/yr)</label><input id="taxPercent" type="number" inputmode="decimal" step="0.01" value="1.1"></div>
+</div>
+<label for="annualIns">Insurance ($/yr)</label>
+<input id="annualIns" type="number" inputmode="decimal" value="1500">
+</div>
+
+<p id="error" role="alert" aria-live="polite"></p>
+
+<div class="card" id="results" hidden>
+<div class="tabs" role="group" aria-label="Payment period">
+<button type="button" data-period="monthly" aria-pressed="true">Monthly</button>
+<button type="button" data-period="quarterly" aria-pressed="false">Quarterly</button>
+<button type="button" data-period="annual" aria-pressed="false">Annual</button>
+</div>
+<p class="sub" id="periodLabel">Estimated monthly payment</p>
+<p class="big" id="total">-</p>
+<div class="bar"><span id="b1" style="background:var(--accent)"></span><span id="b2" style="background:var(--bar)"></span></div>
+<div class="legend"><span>Principal and interest</span><span>Tax and insurance</span></div>
+<dl>
+<div><dt>Principal and interest</dt><dd id="pi"></dd></div>
+<div><dt>Property tax</dt><dd id="tax"></dd></div>
+<div><dt>Insurance</dt><dd id="ins"></dd></div>
+</dl>
+</div>
+
+<div class="card" id="loanCard" hidden>
+<div class="glance">
+<div><p>Monthly</p><strong id="gM"></strong></div>
+<div><p>Quarterly</p><strong id="gQ"></strong></div>
+<div><p>Annual</p><strong id="gA"></strong></div>
+</div>
+<dl>
+<div><dt>Down payment</dt><dd id="down"></dd></div>
+<div><dt>Loan amount</dt><dd id="loan"></dd></div>
+<div><dt>Total interest over term</dt><dd id="interest"></dd></div>
+<div><dt>Total loan repayment</dt><dd id="repay"></dd></div>
+</dl>
+</div>
+</main>
+
+<script src="app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+:root{--bg:#f3f6f4;--card:#fff;--ink:#16302b;--mute:#5d7570;--line:#d5e0dc;--accent:#1f6f5c;--bar:#e3a93b;--err:#b3261e}
+@media (prefers-color-scheme:dark){:root{--bg:#10201c;--card:#172b26;--ink:#e8f1ee;--mute:#93aba5;--line:#2b443d;--accent:#4fbf9f;--err:#ff8a80}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.5}
+main{max-width:520px;margin:0 auto;padding:20px 16px 40px}
+h1{font-size:1.5rem;margin:0 0 16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:16px}
+label{display:block;font-size:.9rem;color:var(--mute);margin:12px 0 4px}
+.card>label:first-child{margin-top:0}
+input{width:100%;font:inherit;font-size:1.05rem;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+input:focus,button:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.row{display:flex;gap:12px}.row>div{flex:1}
+.tabs{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-bottom:14px}
+.tabs button{flex:1;font:inherit;padding:8px 0;border:0;background:transparent;color:var(--mute);cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--accent);color:#fff}
+.big{font-size:2.4rem;font-weight:700;color:var(--accent);margin:0}
+.sub{color:var(--mute);margin:0 0 4px}
+.bar{display:flex;height:14px;border-radius:7px;overflow:hidden;margin:12px 0 8px;background:var(--line)}
+.bar span{display:block;transition:width .2s}
+.legend{display:flex;justify-content:space-between;font-size:.9rem;color:var(--mute)}
+dl{margin:12px 0 0}dl div{display:flex;justify-content:space-between;padding:6px 0;border-top:1px solid var(--line)}
+dt{color:var(--mute)}dd{margin:0;font-weight:700}
+#error{color:var(--err);min-height:1.4em;margin:0 0 12px}
+.glance{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;text-align:center}
+.glance p{margin:0;font-size:.85rem;color:var(--mute)}.glance strong{display:block;font-size:1.05rem;color:var(--ink)}
